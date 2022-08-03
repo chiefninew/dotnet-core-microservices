@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  envoygateway:
+    build: ApiGateways/Envoy
+
+  application-api:
+    image: ${DOCKER_REGISTRY-}applicationapi
+    build:
+      context: .
+      dockerfile: Services/Application/Application.Api/Dockerfile
+
+  identity-api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: Services/Identity/Identity.Api/Dockerfile
+
