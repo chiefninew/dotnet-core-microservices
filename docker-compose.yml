@@ -5,13 +5,13 @@ services:
     build: ApiGateways/Envoy
 
   application-api:
-    image: ${DOCKER_REGISTRY-}applicationapi
+    image: ${DOCKER_REGISTRY-}applicationapi:latest
     build:
       context: .
       dockerfile: Services/Application/Application.Api/Dockerfile
 
   identity-api:
-    image: ${DOCKER_REGISTRY-}identityapi
+    image: ${DOCKER_REGISTRY-}identityapi:latest
     build:
       context: .
       dockerfile: Services/Identity/Identity.Api/Dockerfile
